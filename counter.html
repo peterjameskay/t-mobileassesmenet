@@ -1,0 +1,43 @@
+<html>
+<body>
+
+<h2>Time is moving</h2>
+
+<p>How long you've been here:</p>
+
+<label id="mins">00</label>
+<label id="colon">:</label>
+<label id="secs">00</label>
+    <script type="text/javascript">
+        let minutesLabel = document.getElementById("mins");
+        let secondsLabel = document.getElementById("secs");
+        let totalSeconds = 0;
+        setInterval(setTime, 1000); 
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+<br>
+<br>
+
+<img src="https://cdn.dribbble.com/users/1100029/screenshots/6085420/clock-animation-123.gif" alt="dribbble.com">
+
+</body>
+</html>
